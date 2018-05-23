@@ -12,6 +12,7 @@ module:
   config: 0
   contact: 0
   contextual: 0
+  d8migrate_mars_rover: 0
   d8migrate_rover: 0
   datetime: 0
   dblog: 0
@@ -28,8 +29,10 @@ module:
   link: 0
   menu_ui: 0
   migrate: 0
+  migrate_plus: 0
   migrate_source_csv: 0
   migrate_source_directory: 0
+  migrate_tools: 0
   node: 0
   options: 0
   page_cache: 0

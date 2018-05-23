@@ -1,0 +1,73 @@
+uuid: 2b6c102c-03e8-4d96-b3bb-dcd52d47fb21
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - d8migrate_mars_rover
+_core:
+  default_config_hash: 8_fKn7W-Cs2RTVBGfhErRvkwIOVIpXKHzNfZeIFYowA
+id: rover
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: nasa
+label: 'JSON feed of photos from NASA Mars Rover Curiosity'
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  urls: 'https://api.nasa.gov/mars-photos/api/v1/rovers?api_key=d5bSVFsFrHcGaud3A16H7FipnDuyopz9orRE4e74'
+  item_selector: 1
+  constants: null
+  fields:
+    -
+      name: id
+      label: 'Rover ID'
+      selector: id
+    -
+      name: name
+      label: 'Name of the Rover'
+      selector: name
+    -
+      name: landing_date
+      label: 'The Rover''s landing date on Mars'
+      selector: landing_date
+    -
+      name: launch_date
+      label: 'The Rover''s launch date from Earth'
+      selector: launch_date
+    -
+      name: status
+      label: 'The Rover''s mission status'
+      selector: status
+    -
+      name: max_sol
+      label: 'The most recent Martian sol from which photos exist'
+      selector: max_sol
+    -
+      name: max_date
+      label: 'The most recent Earth date from which photos exist'
+      selector: max_date
+    -
+      name: total_photos
+      label: 'Number of photos taken by that Rover'
+      selector: total_photos
+  ids:
+    id:
+      type: integer
+process:
+  vid:
+    plugin: default_value
+    default_value: rover
+  name: name
+  field_landing_date: landing_date
+  field_launch_date: launch_date
+  field_max_date: max_date
+  field_max_sol: max_sol
+  field_status: status
+  field_total_photos: total_photos
+destination:
+  plugin: 'entity:taxonomy_term'
+migration_dependencies: {  }
