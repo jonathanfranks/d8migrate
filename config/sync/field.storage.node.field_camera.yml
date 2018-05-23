@@ -1,0 +1,22 @@
+uuid: 0d25c501-6c43-4552-a6f1-f502f4ce8e1b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+_core:
+  default_config_hash: WbgMbxlNPlVm6q6fe0fwN0_xgJNx19ZWQFycoBdN5Sc
+id: node.field_camera
+field_name: field_camera
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
