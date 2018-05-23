@@ -1,5 +1,6 @@
 module:
   admin_toolbar: 0
+  admin_toolbar_tools: 0
   automated_cron: 0
   big_pipe: 0
   block: 0
@@ -33,14 +34,10 @@ module:
   options: 0
   page_cache: 0
   path: 0
-  quickedit: 0
-  rdf: 0
-  search: 0
   system: 0
   taxonomy: 0
   text: 0
   toolbar: 0
-  tour: 0
   user: 0
   views_ui: 0
   menu_link_content: 1
