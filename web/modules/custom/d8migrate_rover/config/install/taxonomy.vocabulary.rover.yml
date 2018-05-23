@@ -1,0 +1,9 @@
+uuid: ca020518-02fc-4e9a-b5ab-5bf89161309e
+langcode: en
+status: true
+dependencies: {  }
+name: Rover
+vid: rover
+description: 'Mars Rover'
+hierarchy: 0
+weight: 0

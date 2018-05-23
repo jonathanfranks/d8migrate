@@ -1,0 +1,77 @@
+uuid: afe2d3e5-c3b2-4154-93a7-e2fdbcd1f375
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.rover_photo.body
+    - field.field.node.rover_photo.field_camera
+    - field.field.node.rover_photo.field_earth_date
+    - field.field.node.rover_photo.field_photo
+    - field.field.node.rover_photo.field_rover
+    - field.field.node.rover_photo.field_sol
+    - node.type.rover_photo
+  module:
+    - datetime
+    - image
+    - text
+    - user
+id: node.rover_photo.full
+targetEntityType: node
+bundle: rover_photo
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_camera:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_earth_date:
+    weight: 102
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_photo:
+    weight: 103
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_rover:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_sol:
+    weight: 104
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,23 @@
+uuid: 65c747dd-4383-4c4a-bf0f-dc720a5c1e79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_total_photos
+    - taxonomy.vocabulary.rover
+id: taxonomy_term.rover.field_total_photos
+field_name: field_total_photos
+entity_type: taxonomy_term
+bundle: rover
+label: 'Total photos'
+description: 'Number of photos taken by that Rover'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,29 @@
+uuid: c8cff7fc-738e-496a-8932-5d498611d9c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rover
+    - node.type.rover_photo
+    - taxonomy.vocabulary.rover
+id: node.rover_photo.field_rover
+field_name: field_rover
+entity_type: node
+bundle: rover_photo
+label: Rover
+description: 'The Rover that took the photo'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      rover: rover
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

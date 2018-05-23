@@ -1,0 +1,21 @@
+uuid: e2c91c0e-5174-4b97-9a90-e88ff0e3ddf4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_max_date
+    - taxonomy.vocabulary.rover
+  module:
+    - datetime
+id: taxonomy_term.rover.field_max_date
+field_name: field_max_date
+entity_type: taxonomy_term
+bundle: rover
+label: 'Max date'
+description: 'The most recent Earth date from which photos exist'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

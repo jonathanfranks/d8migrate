@@ -1,0 +1,21 @@
+uuid: a7e5b4e0-b862-408f-8a58-f2a5af070391
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_launch_date
+    - taxonomy.vocabulary.rover
+  module:
+    - datetime
+id: taxonomy_term.rover.field_launch_date
+field_name: field_launch_date
+entity_type: taxonomy_term
+bundle: rover
+label: 'Launch date'
+description: 'The Rover''s launch date from Earth'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

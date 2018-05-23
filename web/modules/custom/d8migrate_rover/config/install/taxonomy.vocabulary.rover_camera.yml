@@ -1,0 +1,9 @@
+uuid: bdaae68c-8f6b-4e00-b2de-dc57e3ce10a4
+langcode: en
+status: true
+dependencies: {  }
+name: 'Rover Camera'
+vid: rover_camera
+description: 'Mars Rover Camera'
+hierarchy: 0
+weight: 0

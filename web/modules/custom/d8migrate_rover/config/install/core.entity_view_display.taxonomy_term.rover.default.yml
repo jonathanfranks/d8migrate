@@ -1,0 +1,81 @@
+uuid: 76a18085-c181-4639-9f99-18cad9332838
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.rover.field_landing_date
+    - field.field.taxonomy_term.rover.field_launch_date
+    - field.field.taxonomy_term.rover.field_max_date
+    - field.field.taxonomy_term.rover.field_max_sol
+    - field.field.taxonomy_term.rover.field_status
+    - field.field.taxonomy_term.rover.field_total_photos
+    - taxonomy.vocabulary.rover
+  module:
+    - datetime
+    - text
+id: taxonomy_term.rover.default
+targetEntityType: taxonomy_term
+bundle: rover
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_landing_date:
+    weight: 1
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_launch_date:
+    weight: 2
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_max_date:
+    weight: 5
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_max_sol:
+    weight: 4
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_status:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_total_photos:
+    weight: 6
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+hidden: {  }

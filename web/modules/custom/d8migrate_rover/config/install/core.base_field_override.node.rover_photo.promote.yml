@@ -1,0 +1,22 @@
+uuid: ae8ff00c-49d7-423e-8110-a296320d6fd2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.rover_photo
+id: node.rover_photo.promote
+field_name: promote
+entity_type: node
+bundle: rover_photo
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,23 @@
+uuid: a21d73c7-41ad-474b-8105-c6a6eda7334c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sol
+    - node.type.rover_photo
+id: node.rover_photo.field_sol
+field_name: field_sol
+entity_type: node
+bundle: rover_photo
+label: Sol
+description: 'Martian sol.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

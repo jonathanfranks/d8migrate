@@ -1,0 +1,23 @@
+uuid: e4a0ca37-fd94-4b72-8792-7156911206e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_max_sol
+    - taxonomy.vocabulary.rover
+id: taxonomy_term.rover.field_max_sol
+field_name: field_max_sol
+entity_type: taxonomy_term
+bundle: rover
+label: 'Max sol'
+description: 'The most recent Martian sol from which photos exist'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,20 @@
+uuid: c0ade290-4792-4ec2-b6e4-864fd1782f72
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_total_photos
+field_name: field_total_photos
+entity_type: taxonomy_term
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

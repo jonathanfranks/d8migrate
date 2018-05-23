@@ -1,0 +1,21 @@
+uuid: dfcede51-de21-46c6-bb0a-b34f0dd6ed8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_earth_date
+    - node.type.rover_photo
+  module:
+    - datetime
+id: node.rover_photo.field_earth_date
+field_name: field_earth_date
+entity_type: node
+bundle: rover_photo
+label: 'Earth date'
+description: 'Earth date the photo was taken.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

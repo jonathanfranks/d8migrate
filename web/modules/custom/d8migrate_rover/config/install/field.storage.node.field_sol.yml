@@ -1,0 +1,20 @@
+uuid: e3337b24-4c05-4e6d-96d7-b19e14d9406c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_sol
+field_name: field_sol
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
