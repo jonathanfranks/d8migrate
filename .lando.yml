@@ -1,0 +1,21 @@
+name: d8migrate
+recipe: drupal8
+config:
+  webroot: web
+  xdebug: true
+  php: '7.1'
+  database: mysql:5.7
+
+# The following entry creates a `lando platform` command that will run
+# any Platform CLI command from inside the container if desired.
+tooling:
+  phplint:
+    service: appserver
+    cmd: bin/phplint
+  phpunit:
+    service: appserver
+    cmd: vendor/bin/phpunit
+  behat:
+    service: appserver
+    cmd: bin/behat
+
