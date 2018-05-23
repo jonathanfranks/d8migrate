@@ -1,0 +1,8 @@
+id: nasa
+label: NASA web services
+description: NASA web services
+source_type: Drupal 8
+dependencies:
+  enforced:
+    module:
+      - d8migrate_mars_rover

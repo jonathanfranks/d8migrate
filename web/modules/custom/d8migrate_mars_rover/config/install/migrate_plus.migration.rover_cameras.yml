@@ -1,0 +1,37 @@
+id: rover_cameras
+label: JSON feed of NASA Mars Rovers, save their camera types
+migration_group: nasa
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  urls: https://api.nasa.gov/mars-photos/api/v1/rovers?api_key=d5bSVFsFrHcGaud3A16H7FipnDuyopz9orRE4e74
+  # Here we have to specify index 1 because index 0 will fail the is_empty() check in the parser.
+  item_selector: 'rovers/1/cameras'
+  constants:
+  fields:
+    -
+      name: name
+      label: 'Camera Name'
+      selector: name
+    -
+      name: full_name
+      label: 'Full Name of the Camera'
+      selector: full_name
+  ids:
+    name:
+      type: string
+  item_selector: rovers/cameras
+process:
+  vid:
+    plugin: default_value
+    default_value: rover_camera
+  name: name
+  description: full_name
+destination:
+  plugin: entity:taxonomy_term
+migration_dependencies: { }
+dependencies:
+  enforced:
+    module:
+      - d8migrate_mars_rover
