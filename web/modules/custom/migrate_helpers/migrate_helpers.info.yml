@@ -1,0 +1,7 @@
+name: Migrate Helpers
+type: module
+description: Helpers for writing custom migrations
+core: 8.x
+package: Breakthrough
+dependencies:
+  - migrate

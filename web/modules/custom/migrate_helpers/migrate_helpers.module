@@ -1,0 +1,63 @@
+<?php
+
+use Drupal\migrate\MigrateException;
+use Drupal\migrate\MigrateExecutable;
+use Drupal\migrate\MigrateMessage;
+use Drupal\migrate\MigrateSkipRowException;
+
+function _migrate_helpers_count_source_rows($migration_id) {
+  /** @var \Drupal\migrate\Plugin\Migration $migration */
+  $migration = \Drupal::service('plugin.manager.migration')
+    ->createInstance($migration_id);
+  $executable = new MigrateExecutable($migration, new MigrateMessage());
+  $source = $migration->getSourcePlugin();
+  $count = $source->count();
+  return $count;
+}
+
+/**
+ * Returns the processed source and destination row data.
+ *
+ * @param string $migration_id
+ *   The migration to test.
+ * @param null $items
+ *   How many items to process, or NULL for all.
+ *
+ * @return array
+ *   The processed row values.
+ */
+function _migrate_helpers_process_row($migration_id, $items = NULL, $process_row = TRUE) {
+  $results = [];
+
+  /** @var \Drupal\migrate\Plugin\Migration $migration */
+  $migration = \Drupal::service('plugin.manager.migration')
+    ->createInstance($migration_id);
+  $executable = new MigrateExecutable($migration, new MigrateMessage());
+  $source = $migration->getSourcePlugin();
+
+  $source->rewind();
+
+  while ($source->valid()) {
+    $row = $source->current();
+    if ($process_row) {
+      try {
+        $executable->processRow($row);
+        $results[] = $row;
+      } catch (MigrateException $e) {
+        $results[] = $e->getMessage();
+      } catch (MigrateSkipRowException $e) {
+        if ($message = trim($e->getMessage())) {
+          $results[] = $message;
+        }
+      }
+    }
+    else {
+      $results[] = $row;
+    }
+    if ($items && count($results) >= $items) {
+      break;
+    }
+    $source->next();
+  }
+  return $results;
+}
