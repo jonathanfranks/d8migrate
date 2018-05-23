@@ -1,0 +1,36 @@
+id: meteorites
+langcode: en
+status: true
+migration_group: meteorites
+migration_tags:
+  - 'Drupal 8'
+label: 'Meteorite Landing Data Import'
+source:
+  plugin: csv
+  keys:
+    - name
+  path: ./modules/custom/migrate_meteorite_landings/data/Meteorite_Landings.csv
+  header_row_count: 1
+  delimiter: ,
+process:
+  #name,id,nametype,recclass,mass (g),fall,year,reclat,reclong,GeoLocation
+  title: name
+  uid:
+    plugin: default_value
+    default_value: 1
+  field_acceleration: Acceleration
+  field_country_of_origin: Origin
+  field_cylinders: Cylinders
+  field_horsepower: Horsepower
+  field_model_year: Model
+  field_mpg: MPG
+  field_weight: Weight
+destination:
+  plugin: 'entity:node'
+  default_bundle: car
+dependencies:
+  enforced:
+    module:
+      - migrate_meteorite_landings
+migration_dependencies:
+  required: { }

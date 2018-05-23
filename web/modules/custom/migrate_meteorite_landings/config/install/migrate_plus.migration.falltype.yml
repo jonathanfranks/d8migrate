@@ -1,0 +1,40 @@
+id: meteorite_falltype
+langcode: en
+status: true
+migration_group: meteorites
+migration_tags:
+  - 'Drupal 8'
+label: 'Meteorite fall types'
+source:
+  plugin: csv
+  keys:
+    - fall
+  path: ./modules/custom/migrate_meteorite_landings/data/Meteorite_Landings.csv
+  header_row_count: 1
+  delimiter: ,
+process:
+  name: fall
+  already_exists:
+    # Check if the "fall" name exists.
+    source: fall
+    plugin: entity_lookup
+    value_key: name
+    bundle_key: vid
+    bundle: meteorite_fall_type
+    entity_type: taxonomy_term
+    ignore_case: true
+  skip:
+    # And skip it if it does so we don't add duplicates.
+    plugin: skip_on_value
+    method: row
+    value: '@already_exists'
+    not_equals: NULL
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: meteorite_fall_type
+dependencies:
+  enforced:
+    module:
+      - migrate_meteorite_landings
+migration_dependencies:
+  required: { }

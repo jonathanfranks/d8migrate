@@ -1,0 +1,40 @@
+id: meteorite_name_types
+langcode: en
+status: true
+migration_group: meteorites
+migration_tags:
+  - 'Drupal 8'
+label: 'Meteorite name types'
+source:
+  plugin: csv
+  keys:
+    - nametype
+  path: ./modules/custom/migrate_meteorite_landings/data/Meteorite_Landings.csv
+  header_row_count: 1
+  delimiter: ,
+process:
+  name: nametype
+  already_exists:
+    # Check if the "nametype" name exists.
+    source: nametype
+    plugin: entity_lookup
+    value_key: name
+    bundle_key: vid
+    bundle: name_type
+    entity_type: taxonomy_term
+    ignore_case: true
+  skip:
+    # And skip it if it does so we don't add duplicates.
+    plugin: skip_on_value
+    method: row
+    value: '@already_exists'
+    not_equals: NULL
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: name_type
+dependencies:
+  enforced:
+    module:
+      - migrate_meteorite_landings
+migration_dependencies:
+  required: { }

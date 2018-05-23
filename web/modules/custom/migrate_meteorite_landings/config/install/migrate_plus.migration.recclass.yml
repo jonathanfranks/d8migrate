@@ -1,0 +1,40 @@
+id: meteorite_recclass
+langcode: en
+status: true
+migration_group: meteorites
+migration_tags:
+  - 'Drupal 8'
+label: 'Meteorite classification types'
+source:
+  plugin: csv
+  keys:
+    - recclass
+  path: ./modules/custom/migrate_meteorite_landings/data/Meteorite_Landings.csv
+  header_row_count: 1
+  delimiter: ,
+process:
+  name: recclass
+  already_exists:
+    # Check if the "recclass" name exists.
+    source: recclass
+    plugin: entity_lookup
+    value_key: name
+    bundle_key: vid
+    bundle: meteorite_class
+    entity_type: taxonomy_term
+    ignore_case: true
+  skip:
+    # And skip it if it does so we don't add duplicates.
+    plugin: skip_on_value
+    method: row
+    value: '@already_exists'
+    not_equals: NULL
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: meteorite_class
+dependencies:
+  enforced:
+    module:
+      - migrate_meteorite_landings
+migration_dependencies:
+  required: { }

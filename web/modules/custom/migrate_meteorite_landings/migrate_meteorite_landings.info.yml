@@ -1,0 +1,5 @@
+name: 'Migrate Meteorite Landings'
+type: module
+description: 'Migration for NASA meteorite landing data'
+core: 8.x
+package: 'D8Migrate'
