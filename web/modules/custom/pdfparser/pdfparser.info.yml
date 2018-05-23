@@ -2,4 +2,4 @@ name: PDF Parser
 type: module
 description: Parses PDFs
 core: 8.x
-package: MidCamp
+package: D8Migrate
