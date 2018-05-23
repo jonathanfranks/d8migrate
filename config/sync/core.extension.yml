@@ -14,6 +14,7 @@ module:
   contextual: 0
   datetime: 0
   dblog: 0
+  devel: 0
   dynamic_page_cache: 0
   editor: 0
   field: 0
