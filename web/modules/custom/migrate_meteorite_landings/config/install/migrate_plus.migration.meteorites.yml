@@ -43,10 +43,6 @@ process:
     migration: meteorite_falltype
     source: fall
   field_landing_date:
-#    plugin: format_date
-#    from_format: 'm/d/y  H:i:s A'
-#    to_format: 'Y-m-d\TH:i:s'
-#    source: year
     -
       plugin: callback
       callable:
@@ -57,8 +53,11 @@ process:
       from_format: 'm/d/Y h:i:s A'
       to_format: 'Y-m-d\TH:i:s'
   field_landing_id: id
-  'field_location/lng': reclong
-  'field_location/lat': reclat
+  field_location:
+      plugin: geofield_latlon
+      source:
+        - reclat
+        - reclong
   field_mass: mass
   'field_name_type/target_id':
     plugin: migration_lookup
