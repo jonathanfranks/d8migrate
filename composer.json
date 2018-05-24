@@ -24,7 +24,7 @@
         "drupal/console": "^1.0.2",
         "drupal/core": "~8.5.3",
         "drupal/devel": "^1.2",
-        "drupal/geolocation": "^1.11",
+        "drupal/leaflet": "^1.0@beta",
         "drupal/migrate_devel": "1.x-dev",
         "drupal/migrate_plus": "4.0-beta3",
         "drupal/migrate_source_csv": "^2.1",
