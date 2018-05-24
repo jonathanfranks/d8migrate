@@ -1,0 +1,29 @@
+uuid: b6c9e720-0806-4b86-8c3f-c82f31e61638
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fall_type
+    - node.type.meteorite_landing
+    - taxonomy.vocabulary.meteorite_fall_type
+id: node.meteorite_landing.field_fall_type
+field_name: field_fall_type
+entity_type: node
+bundle: meteorite_landing
+label: 'Fall type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      meteorite_fall_type: meteorite_fall_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

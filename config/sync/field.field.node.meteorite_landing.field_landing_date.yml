@@ -1,0 +1,21 @@
+uuid: 7fbbea49-2cae-48ec-ac98-5c0615f88a87
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_landing_date
+    - node.type.meteorite_landing
+  module:
+    - datetime
+id: node.meteorite_landing.field_landing_date
+field_name: field_landing_date
+entity_type: node
+bundle: meteorite_landing
+label: 'Landing date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

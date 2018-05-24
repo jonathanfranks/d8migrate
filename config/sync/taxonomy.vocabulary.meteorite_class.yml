@@ -1,0 +1,9 @@
+uuid: 23246ac7-4d76-4aed-8ec2-e79d517c78fb
+langcode: en
+status: true
+dependencies: {  }
+name: 'Meteorite Class'
+vid: meteorite_class
+description: 'Class of meteorite'
+hierarchy: 0
+weight: 0

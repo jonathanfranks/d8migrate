@@ -1,0 +1,20 @@
+uuid: b94ef9bc-7d51-43b3-bafa-472286d2ae15
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_landing_date
+field_name: field_landing_date
+entity_type: node
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

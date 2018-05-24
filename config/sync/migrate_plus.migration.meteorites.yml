@@ -1,0 +1,84 @@
+uuid: 8cda8202-5464-44f0-b02e-68b4ab4afdd0
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_meteorite_landings
+_core:
+  default_config_hash: MMt5d5p_cxdVXstati2uGdF_1fhZt5xbTtPo8_Swsss
+id: meteorites
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 8'
+migration_group: meteorites
+label: 'Meteorite Landing Data Import'
+source:
+  plugin: csv
+  keys:
+    - id
+  path: ./modules/custom/migrate_meteorite_landings/data/Meteorite_Landings.csv
+  header_row_count: 1
+  delimiter: ','
+  column_names:
+    -
+      name: Name
+    -
+      id: ID
+    -
+      nametype: 'Name type'
+    -
+      recclass: 'Meteorite class'
+    -
+      mass: Mass
+    -
+      fall: 'Fall type'
+    -
+      year: 'Landing year'
+    -
+      reclat: 'Landing latitude'
+    -
+      reclong: 'Landing longitude'
+    -
+      GeoLocation: Coordinates
+process:
+  title: name
+  uid:
+    plugin: default_value
+    default_value: 1
+  field_fall_type/target_id:
+    plugin: migration_lookup
+    migration: meteorite_falltype
+    source: fall
+  field_landing_date:
+    -
+      plugin: callback
+      callable:
+        - strtotime
+      source: year
+    -
+      plugin: format_date
+      from_format: 'm/d/Y h:i:s A'
+      to_format: 'Y-m-d\TH:i:s'
+  field_landing_id: id
+  field_location:
+    plugin: geofield_latlon
+    source:
+      - reclat
+      - reclong
+  field_mass: mass
+  field_name_type/target_id:
+    plugin: migration_lookup
+    migration: meteorite_name_types
+    source: nametype
+  field_rec_class/target_id:
+    plugin: migration_lookup
+    migration: meteorite_recclass
+    source: recclass
+destination:
+  plugin: 'entity:node'
+  default_bundle: meteorite_landing
+migration_dependencies:
+  required: {  }

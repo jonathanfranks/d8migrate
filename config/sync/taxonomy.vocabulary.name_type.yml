@@ -1,0 +1,9 @@
+uuid: e70188f2-0af5-4d77-8bba-82d66f769245
+langcode: en
+status: true
+dependencies: {  }
+name: 'Name type'
+vid: name_type
+description: 'Meteorite name type'
+hierarchy: 0
+weight: 0

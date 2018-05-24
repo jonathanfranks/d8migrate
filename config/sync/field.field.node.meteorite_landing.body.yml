@@ -1,0 +1,22 @@
+uuid: 24e36860-3d11-4adc-adf7-ffff111d9302
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.meteorite_landing
+  module:
+    - text
+id: node.meteorite_landing.body
+field_name: body
+entity_type: node
+bundle: meteorite_landing
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

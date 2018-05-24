@@ -1,0 +1,18 @@
+uuid: 1c86b970-f8ba-4ff4-a3b0-88ef639df950
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Meteorite landing'
+type: meteorite_landing
+description: 'Record of a meteorite landing'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

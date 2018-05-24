@@ -1,0 +1,23 @@
+uuid: b63f707d-b6db-499b-8328-e4f861dc28a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mass
+    - node.type.meteorite_landing
+id: node.meteorite_landing.field_mass
+field_name: field_mass
+entity_type: node
+bundle: meteorite_landing
+label: Mass
+description: 'Mass in grams'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

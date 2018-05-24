@@ -1,0 +1,120 @@
+uuid: e888f84a-6494-4674-85c6-9d7c097f83da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.meteorite_landing.body
+    - field.field.node.meteorite_landing.field_fall_type
+    - field.field.node.meteorite_landing.field_landing_date
+    - field.field.node.meteorite_landing.field_landing_id
+    - field.field.node.meteorite_landing.field_location
+    - field.field.node.meteorite_landing.field_mass
+    - field.field.node.meteorite_landing.field_name_type
+    - field.field.node.meteorite_landing.field_rec_class
+    - node.type.meteorite_landing
+  module:
+    - datetime
+    - leaflet
+    - text
+    - user
+id: node.meteorite_landing.default
+targetEntityType: node
+bundle: meteorite_landing
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_fall_type:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_landing_date:
+    weight: 107
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_landing_id:
+    weight: 102
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_location:
+    weight: 108
+    label: above
+    settings:
+      leaflet_map: 'OSM Mapnik'
+      height: 400
+      zoom: 10
+      minPossibleZoom: 0
+      maxPossibleZoom: 18
+      minZoom: 0
+      maxZoom: 18
+      popup: false
+      icon:
+        icon_url: ''
+        shadow_url: ''
+        icon_size:
+          x: 0
+          'y': 0
+        icon_anchor:
+          x: 0
+          'y': 0
+        shadow_anchor:
+          x: 0
+          'y': 0
+        popup_anchor:
+          x: 0
+          'y': 0
+    third_party_settings: {  }
+    type: leaflet_formatter_default
+    region: content
+  field_mass:
+    weight: 105
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_name_type:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_rec_class:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

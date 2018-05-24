@@ -1,0 +1,20 @@
+uuid: 7f65ffcc-29ca-49a6-b68d-051b10ebc3db
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_mass
+field_name: field_mass
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

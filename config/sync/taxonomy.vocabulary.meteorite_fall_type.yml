@@ -1,0 +1,9 @@
+uuid: 33fce2ad-b326-4178-a4dc-73e5482f64da
+langcode: en
+status: true
+dependencies: {  }
+name: 'Meteorite fall type'
+vid: meteorite_fall_type
+description: 'How the meteorite was discovered'
+hierarchy: 0
+weight: 0

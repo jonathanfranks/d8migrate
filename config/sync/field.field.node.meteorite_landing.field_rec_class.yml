@@ -1,0 +1,29 @@
+uuid: 18646a34-136a-4dde-af20-5bd38cab177e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rec_class
+    - node.type.meteorite_landing
+    - taxonomy.vocabulary.meteorite_class
+id: node.meteorite_landing.field_rec_class
+field_name: field_rec_class
+entity_type: node
+bundle: meteorite_landing
+label: 'Rec class'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      meteorite_class: meteorite_class
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

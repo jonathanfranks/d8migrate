@@ -1,0 +1,22 @@
+uuid: 3c56d3e8-79b6-446f-b6c5-1c24e532d691
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.meteorite_landing
+  module:
+    - geofield
+id: node.meteorite_landing.field_location
+field_name: field_location
+entity_type: node
+bundle: meteorite_landing
+label: Location
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  backend: geofield_backend_default
+field_type: geofield

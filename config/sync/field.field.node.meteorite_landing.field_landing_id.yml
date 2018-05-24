@@ -1,0 +1,23 @@
+uuid: f5522c6a-e3b7-482b-8ddb-12a40ee9f4e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_landing_id
+    - node.type.meteorite_landing
+id: node.meteorite_landing.field_landing_id
+field_name: field_landing_id
+entity_type: node
+bundle: meteorite_landing
+label: 'Landing ID'
+description: 'Unique ID for the tracking of this meteorite landing.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

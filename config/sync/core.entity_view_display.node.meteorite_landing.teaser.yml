@@ -1,0 +1,28 @@
+uuid: abdf89aa-1008-41d1-8e63-fac33c886819
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.meteorite_landing.body
+    - node.type.meteorite_landing
+  module:
+    - text
+    - user
+id: node.meteorite_landing.teaser
+targetEntityType: node
+bundle: meteorite_landing
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

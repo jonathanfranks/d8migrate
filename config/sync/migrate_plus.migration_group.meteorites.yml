@@ -1,0 +1,15 @@
+uuid: e009859d-a771-42ee-a5d3-3d2fc1a0cfe7
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_meteorite_landings
+_core:
+  default_config_hash: mre6bZe6767Q_wbZJD2xkxp89Vpx1apYAk7P--H3qaQ
+id: meteorites
+label: 'NASA Meteorite Landing CSV'
+description: 'Data file with meteorite landings'
+source_type: 'Drupal 8'
+module: null
+shared_configuration: null
