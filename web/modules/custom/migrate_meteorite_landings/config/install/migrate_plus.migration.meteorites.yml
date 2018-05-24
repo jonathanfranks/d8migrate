@@ -8,26 +8,69 @@ label: 'Meteorite Landing Data Import'
 source:
   plugin: csv
   keys:
-    - name
+    - id
   path: ./modules/custom/migrate_meteorite_landings/data/Meteorite_Landings.csv
   header_row_count: 1
   delimiter: ,
+  column_names:
+    0:
+      name: 'Name'
+    1:
+      id: 'ID'
+    2:
+      nametype: 'Name type'
+    3:
+      recclass: 'Meteorite class'
+    4:
+      mass: 'Mass'
+    5:
+      fall: 'Fall type'
+    6:
+      year: 'Landing year'
+    7:
+      reclat: 'Landing latitude'
+    8:
+      reclong: 'Landing longitude'
+    9:
+      GeoLocation: 'Coordinates'
 process:
-  #name,id,nametype,recclass,mass (g),fall,year,reclat,reclong,GeoLocation
   title: name
   uid:
     plugin: default_value
     default_value: 1
-  field_acceleration: Acceleration
-  field_country_of_origin: Origin
-  field_cylinders: Cylinders
-  field_horsepower: Horsepower
-  field_model_year: Model
-  field_mpg: MPG
-  field_weight: Weight
+  'field_fall_type/target_id':
+    plugin: migration_lookup
+    migration: meteorite_falltype
+    source: fall
+  field_landing_date:
+#    plugin: format_date
+#    from_format: 'm/d/y  H:i:s A'
+#    to_format: 'Y-m-d\TH:i:s'
+#    source: year
+    -
+      plugin: callback
+      callable:
+        - strtotime
+      source: year
+    -
+      plugin: format_date
+      from_format: 'm/d/Y h:i:s A'
+      to_format: 'Y-m-d\TH:i:s'
+  field_landing_id: id
+  'field_location/lng': reclong
+  'field_location/lat': reclat
+  field_mass: mass
+  'field_name_type/target_id':
+    plugin: migration_lookup
+    migration: meteorite_name_types
+    source: nametype
+  'field_rec_class/target_id':
+    plugin: migration_lookup
+    migration: meteorite_recclass
+    source: recclass
 destination:
   plugin: 'entity:node'
-  default_bundle: car
+  default_bundle: meteorite_landing
 dependencies:
   enforced:
     module:
