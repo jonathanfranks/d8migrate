@@ -89,6 +89,8 @@ class RoverMigrateForm extends FormBase {
    *
    * @return array
    *   The appropriate test date term options.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    */
   public static function termOptions($parentTerm, $vid) {
     $term_options = [];
@@ -118,11 +120,19 @@ class RoverMigrateForm extends FormBase {
   }
 
   /**
-   * @param $migration_id
-   * @param $rover_name
-   * @param $date
+   * Gets a Rover Photo migration with corrected parameters.
+   *
+   * @param string $migration_id
+   *   ID of the migration.
+   * @param string $rover_name
+   *   Name of the Rover.
+   * @param string $date
+   *   Date to get pictures from.
    *
    * @return \Drupal\migrate\MigrateExecutable
+   *   The migration with the parameters populated.
+   *
+   * @throws \Drupal\migrate\MigrateException
    */
   protected function getMigration($migration_id, $rover_name, $date) {
     /** @var \Drupal\migrate\Plugin\Migration $migration */
