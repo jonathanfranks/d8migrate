@@ -1,0 +1,5 @@
+rover_forms.migrate_form:
+  title: 'Migrate Rover Images'
+  route_name: rover_forms.rover_migrate_form
+  menu_name: main
+  weight: 1

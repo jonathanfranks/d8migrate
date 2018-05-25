@@ -1,0 +1,8 @@
+name: 'rover_forms'
+type: module
+description: 'Forms to control custom migrations of NASA Mars Rover pictures'
+core: 8.x
+package: 'D8Migrate'
+dependencies:
+  - d8migrate_mars_rover
+  - d8migrate_rover
