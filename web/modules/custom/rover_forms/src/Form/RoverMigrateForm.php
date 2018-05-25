@@ -70,7 +70,7 @@ class RoverMigrateForm extends FormBase {
       $executable = $this->getMigration($migration_id, $rover_name, $date);
       $ex = $executable->import();
     }
-    $view_route = 'view.rover_photos.page_1';
+    $view_route = 'view.mars_rover_photos.page_1';
     $route_params = [
       'field_rover_target_id' => $rover_id,
       'field_camera_target_id' => 'All',

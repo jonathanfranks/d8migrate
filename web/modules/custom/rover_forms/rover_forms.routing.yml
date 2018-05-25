@@ -1,4 +1,3 @@
-
 rover_forms.rover_migrate_form:
   path: '/rover/migrate'
   defaults:
