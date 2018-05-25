@@ -1,0 +1,8 @@
+id: pdf
+label: PDF migrations
+description: PDF migrations
+source_type: Drupal 8
+dependencies:
+  enforced:
+    module:
+      - migrate_pdfs

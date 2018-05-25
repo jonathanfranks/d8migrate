@@ -1,0 +1,29 @@
+langcode: en
+status: true
+id: pdf
+migration_tags: directory
+migration_group: pdf
+label: 'PDF Contents'
+source:
+  plugin: directory
+  track_changes: true
+  urls:
+    - ./modules/custom/migrate_pdfs/data/
+  file_extensions:
+    - pdf
+  recurse_level: -1
+process:
+  title: filename
+  body/value:
+    plugin: parse_pdf
+    source: url
+destination:
+  plugin: 'entity:node'
+  default_bundle: document
+dependencies:
+  enforced:
+    module:
+      - migrate_pdfs
+migration_dependencies:
+  required: {  }
+  optional: {  }
