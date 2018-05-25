@@ -1,0 +1,7 @@
+name: BT Migrate Destination CSV
+type: module
+description: Migrate destination to CSV file.
+core: 8.x
+package: Breakthrough
+dependencies:
+  - migrate

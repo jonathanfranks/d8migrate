@@ -1,0 +1,28 @@
+langcode: en
+status: true
+id: file_list_to_csv
+migration_tags: directory
+migration_group: filelist
+label: 'File list to CSV'
+source:
+  plugin: directory
+  track_changes: true
+  urls:
+    - ./sites/default/files
+#  file_extensions:
+#    - pdf
+  recurse_level: -1
+process:
+  title: filename
+  path: path
+  url: url
+destination:
+  plugin: 'csv'
+  path: ./export.csv
+dependencies:
+  enforced:
+    module:
+      - migrate_export_file_list
+migration_dependencies:
+  required: {  }
+  optional: {  }

@@ -1,0 +1,8 @@
+id: filelist
+label: Export file list to CSV
+description: Custom destination plugin
+source_type: Drupal 8
+dependencies:
+  enforced:
+    module:
+      - migrate_export_file_list
