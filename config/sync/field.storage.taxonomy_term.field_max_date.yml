@@ -1,0 +1,22 @@
+uuid: ada0ddc4-3d42-406b-81d1-153df955dbfe
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - taxonomy
+_core:
+  default_config_hash: PJjai7vAkwdFwDIAbSAHkFuc2FCtaV5cxE8PkoXr2Dw
+id: taxonomy_term.field_max_date
+field_name: field_max_date
+entity_type: taxonomy_term
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

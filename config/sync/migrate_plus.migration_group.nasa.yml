@@ -1,0 +1,15 @@
+uuid: 5bdb5b89-efa9-4cef-bbbc-32e7450a542f
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - d8migrate_mars_rover
+_core:
+  default_config_hash: SY_Cjub3tXE979w6w9h2Hk9PfmT7yF7Ko00Ulgwd4fw
+id: nasa
+label: 'NASA web services'
+description: 'NASA web services'
+source_type: 'Drupal 8'
+module: null
+shared_configuration: null

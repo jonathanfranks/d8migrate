@@ -1,0 +1,44 @@
+uuid: b1899cec-f4d2-4b04-9a9b-f85bd8848933
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - d8migrate_mars_rover
+_core:
+  default_config_hash: pXiJ3yA6SGpTc3FYmY_uHrGtGwp7KdIhunujuQvV0lw
+id: rover_cameras
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: nasa
+label: 'JSON feed of NASA Mars Rovers, save their camera types'
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  urls: 'https://api.nasa.gov/mars-photos/api/v1/rovers?api_key=d5bSVFsFrHcGaud3A16H7FipnDuyopz9orRE4e74'
+  item_selector: rovers/1/cameras
+  constants: null
+  fields:
+    -
+      name: name
+      label: 'Camera Name'
+      selector: name
+    -
+      name: full_name
+      label: 'Full Name of the Camera'
+      selector: full_name
+  ids:
+    name:
+      type: string
+process:
+  vid:
+    plugin: default_value
+    default_value: rover_camera
+  name: name
+  description: full_name
+destination:
+  plugin: 'entity:taxonomy_term'
+migration_dependencies: {  }
