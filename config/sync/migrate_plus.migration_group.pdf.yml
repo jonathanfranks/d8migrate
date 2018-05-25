@@ -1,0 +1,15 @@
+uuid: 919c25ac-a79a-421c-9aff-931de7dfda11
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_pdfs
+_core:
+  default_config_hash: Iz19mn4rKO2583BLTwbSxWBTUV8J8wKdNeIn_hZWIJU
+id: pdf
+label: 'PDF migrations'
+description: 'PDF migrations'
+source_type: 'Drupal 8'
+module: null
+shared_configuration: null

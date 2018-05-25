@@ -12,8 +12,6 @@ module:
   config: 0
   contact: 0
   contextual: 0
-  d8migrate_mars_rover: 0
-  d8migrate_rover: 0
   datetime: 0
   dblog: 0
   devel: 0
@@ -35,6 +33,7 @@ module:
   migrate: 0
   migrate_helpers: 0
   migrate_meteorite_landings: 0
+  migrate_pdfs: 0
   migrate_plus: 0
   migrate_source_csv: 0
   migrate_source_directory: 0
@@ -43,6 +42,7 @@ module:
   options: 0
   page_cache: 0
   path: 0
+  pdfparser: 0
   system: 0
   taxonomy: 0
   text: 0

@@ -1,0 +1,35 @@
+uuid: 9e65158d-6226-42c1-8729-37135ac4ebdf
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_pdfs
+_core:
+  default_config_hash: 0ygNUhxLuRt2G3Qog7YEUtnGVEapVKxTR4eXPuN4L-M
+id: pdf
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: directory
+migration_group: pdf
+label: 'PDF Contents'
+source:
+  plugin: directory
+  track_changes: true
+  urls:
+    - ./modules/custom/migrate_pdfs/data/
+  file_extensions:
+    - pdf
+  recurse_level: -1
+process:
+  title: filename
+  body/value:
+    plugin: parse_pdf
+    source: url
+destination:
+  plugin: 'entity:node'
+  default_bundle: document
+migration_dependencies:
+  required: {  }
+  optional: {  }
