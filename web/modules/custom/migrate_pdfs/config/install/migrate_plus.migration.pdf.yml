@@ -6,7 +6,6 @@ migration_group: pdf
 label: 'PDF Contents'
 source:
   plugin: directory
-  track_changes: true
   urls:
     - ./modules/custom/migrate_pdfs/data/
   file_extensions:
