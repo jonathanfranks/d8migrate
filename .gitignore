@@ -22,3 +22,7 @@
 
 # Ignore .env files as they are personal
 /.env
+
+# Ignore Lando database backups
+drupal8.*.gz
+
