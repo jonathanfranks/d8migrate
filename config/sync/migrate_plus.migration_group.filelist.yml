@@ -1,0 +1,15 @@
+uuid: eedc20d2-f52f-4e4d-b9a6-efc2679ee7ae
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_export_file_list
+_core:
+  default_config_hash: q9wc2nSKzQQFiJcdVTVg4qJcWs-0qnFNS6SbBaoiR5k
+id: filelist
+label: 'Export file list to CSV'
+description: 'Custom destination plugin'
+source_type: 'Drupal 8'
+module: null
+shared_configuration: null

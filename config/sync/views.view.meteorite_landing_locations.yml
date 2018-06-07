@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_location
     - node.type.meteorite_landing
+    - system.menu.main
   module:
     - geofield
     - leaflet_views
@@ -268,6 +269,15 @@ display:
     display_options:
       display_extenders: {  }
       path: meteorite-landing-locations
+      menu:
+        type: normal
+        title: 'Meteorite Landing Sites'
+        description: ''
+        expanded: false
+        parent: ''
+        weight: 0
+        context: '0'
+        menu_name: main
     cache_metadata:
       max-age: -1
       contexts:

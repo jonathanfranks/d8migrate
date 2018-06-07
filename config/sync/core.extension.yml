@@ -33,6 +33,8 @@ module:
   link: 0
   menu_ui: 0
   migrate: 0
+  migrate_destination_csv: 0
+  migrate_export_file_list: 0
   migrate_helpers: 0
   migrate_meteorite_landings: 0
   migrate_pdfs: 0
