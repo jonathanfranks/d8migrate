@@ -48,6 +48,7 @@ module:
   path: 0
   pdfparser: 0
   rover_forms: 0
+  shortcut: 0
   system: 0
   taxonomy: 0
   text: 0
