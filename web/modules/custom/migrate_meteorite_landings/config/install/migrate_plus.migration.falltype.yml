@@ -22,7 +22,6 @@ process:
     bundle_key: vid
     bundle: meteorite_fall_type
     entity_type: taxonomy_term
-    ignore_case: true
   skip:
     # And skip it if it does so we don't add duplicates.
     plugin: skip_on_value
